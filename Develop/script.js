@@ -26,7 +26,9 @@ function writePassword() {
 function generatePassword() {
   passWordLength();
   passAskUpper();
-  
+  getRandomLower();
+  getRandomNumber();
+  getRandomSymbols();
   
   
   
@@ -35,48 +37,74 @@ function generatePassword() {
 generateBtn.addEventListener("click", writePassword);
 
   function passWordLength() {
+    while(true){
     var passLength = prompt("how long you want the password between 8 and 128");
+    if (passLength == null){
+      alert("Exiting Password Generator")
+    }else{
     if((passLength <8) || (passLength > 128)){
       alert("you need at least 8 or less than 128 characters")}
     
-      else{passLength = lengthPass}
-    
+    else{passLength = lengthPass}
+    };
+  };
   }
-
   function passAskUpper() {
+    while(true){
     var upperCase = prompt("do you want upper case? yes or no");
+    if (upperCase == null){
+      allow = allow
+    }else{
     if(upperCase === yes){
       allow += allow
     }
     else { allow = allow}
   }
-
+  }
+  }
   function passAskLower() {
+    while(true){
     var lowerCase = prompt("do you want lower case? yes or no");
+    if(lowerCase == null){
+      allow = allow
+    }else{
     if(lowerCase === yes){
       allow += allow
     }
     else{
       allow = allow
-    }
-  }
+    };
+  };
+  };
+}
   function passAskNum() {
+    while(true){
     var numCase = prompt("do you want numbers? yes or no");
+    if(numCase == null){
+      allow = allow
+    }else{
     if(numCase === yes){
       allow += allow
     }
     else{
       allow = allow
-    }
-  }
+    };
+  };
+  };
+}
   function passAskSym(params) {
+    while(true){
     var symbolCase = prompt("do you want symbols? yes or no");
+    if(symbolCase == null){
+      allow = allow
+    }else{
     if(symbolCase === yes){
       allow += allow
     }
     else{allow + allow}
+    };
+  };
   }
-
     //when we click the button it it should
     //prompt for how long of password
 

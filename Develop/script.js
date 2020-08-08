@@ -4,6 +4,11 @@ var generateBtn = document.querySelector("#generate");
 generateBtn.addEventListener("click", writePassword);
 //WHEN I click the button to generate a password
 // Assignment Code
+var caseUpper = String.fromCharCode(Math.floor(Math.random()* 26)+97)
+var caseLower = String.fromCharCode(Math.floor(Math.random()*26)+97)
+var caseNum = String.fromCharCode(Math.floor(Math.random()* 10)+48)
+var symbolLetters = Math.floor(Math.random() * 12)
+      for(i = 0; i <= symbolLetters.length; i++){}
 
 var symbolLetters = "!@#$%^&*(){}"
 var userInput = ""
@@ -11,6 +16,7 @@ var  passLength
 var password
 var symbolCase 
 var lengthPass
+var PWChoice = ""
 // Write password to the #password input
 // Assignment Code
 
@@ -45,7 +51,7 @@ generateBtn.addEventListener("click", writePassword);
     if((passLength <8) || (passLength > 128)){
       alert("you need at least 8 or less than 128 characters")}
     
-    else{passLength = lengthPass}
+    else{return parseInt(passLength)}
     };
   };
   }
@@ -53,12 +59,12 @@ generateBtn.addEventListener("click", writePassword);
     while(true){
     var upperCase = prompt("do you want upper case? yes or no");
     if (upperCase == null){
-      allow = allow
+      PWChoice = PWChoice
     }else{
     if(upperCase === yes){
-      allow += allow
+      PWChoice = PWChoice + caseUpper
     }
-    else { allow = allow}
+    else { PWChoice = PWChoice}
   }
   }
   }
@@ -66,13 +72,13 @@ generateBtn.addEventListener("click", writePassword);
     while(true){
     var lowerCase = prompt("do you want lower case? yes or no");
     if(lowerCase == null){
-      allow = allow
+      PWChoice = PWChoice
     }else{
     if(lowerCase === yes){
-      allow += allow
+      PWChoice = PWChoice + caseLower
     }
     else{
-      allow = allow
+      PWChoice = PWChoice
     };
   };
   };
@@ -81,13 +87,13 @@ generateBtn.addEventListener("click", writePassword);
     while(true){
     var numCase = prompt("do you want numbers? yes or no");
     if(numCase == null){
-      allow = allow
+      PWChoice = PWChoice
     }else{
     if(numCase === yes){
-      allow += allow
+      PWChoice = PWChoice + caseNum
     }
     else{
-      allow = allow
+      PWChoice = PWChoice
     };
   };
   };
@@ -96,45 +102,15 @@ generateBtn.addEventListener("click", writePassword);
     while(true){
     var symbolCase = prompt("do you want symbols? yes or no");
     if(symbolCase == null){
-      allow = allow
+      PWChoice = PWChoice
     }else{
     if(symbolCase === yes){
-      allow += allow
+      PWChoice += PWChoice
     }
-    else{allow + allow}
+    else{PWChoice + PWChoice}
     };
   };
   }
-    //when we click the button it it should
-    //prompt for how long of password
 
-    
-    //if i want ...
-    // upper case
-    
-    function getRandomUpper(){
-      return String.fromCharCode(Math.floor(Math.random()* 26)+97)
-    }
-    //lower case
-    
-    //this function is for the random number for lower case without use of var lowercase letters
-    function getRandomLower(){
-      return String.fromCharCode(Math.floor(Math.random()*26)+97)
-    }
-    //numbers
-  
-    function getRandomNumber(){
-      return String.fromCharCode(Math.floor(Math.random()* 10)+48)
-    }
-    //symbols
-    
-    function getRandomSymbols(){
-      var symbolLetters = Math.floor(Math.random() * 10) + 1
-      for(i = 0; i <= symbolLetters.length; i++){}
-    }
-    //then it will use the length of password to fill in with the cases i used
-    
-  
-//prompts set up
 
 

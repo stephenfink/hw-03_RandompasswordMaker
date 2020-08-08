@@ -1,21 +1,7 @@
 
 var generateBtn = document.querySelector("#generate");
 //possible content arrays I can make each letter/number into a unit
-var passNum = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
-var passUCase = ["A", "B", "C", "D","E","F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W","X" , "Y", "Z"]
-var passLCase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
-var passSCase = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", ">", "<","/", "{", "}"]
-var userInput = []
-var passULNS = [passUCase + passLCase + passNum + passSCase]
-var passULN = [passUCase + passLCase + passNum]
-var passULS = [passUCase + passLCase + passSCase]
-var passUL = [passUCase + passLCase]
-var passUN = [passUCase + passNum]
-var passUS = [passUCase + passSCase]
-var passLNS = [passLCase + passNum + passSCase]
-var passLS = [passLCase + passSCase]
-var passLN = [passLCase + passNum]
-var passNS = [passNum + passSCase]
+
 
 
 //WHEN I click the button to generate a password
@@ -52,26 +38,39 @@ else {
 var upperCase = prompt("Uppercase? yes or no")
   if(upperCase = yes){
     //adds the U part of the var list to the RNG
+    function getRandomUpperCase(){
+      return String.fromCharCode(Math.floor(Math.random()*26)+65);
+    }
   }
   else {
     //does not add the U part of the var list
   }
-var lowerCase = prompt("Uppercase? yes or no")
+var lowerCase = prompt("Lowercase? yes or no")
   if(lowerCase = yes){
+    //this is from a video used
+      function getRandomLowerCase(){
+        return String.fromCharCode(Math.floor(Math.random()*26)+97);
+      }
     //adds the L part of the var list to the RNG
   }
   else {
     //does not add the L part of the var list
   }
-var numCase = prompt("Uppercase? yes or no")
+var numCase = prompt("Numbers? yes or no")
   if(numCase = yes){
+    function getRandomNumberCase(){
+      return String.fromCharCode(Math.floor(Math.random()*10)+48)
     //adds the N part of the var list to the RNG
   }
   else {
     //does not add the N part of the var list
   }
-var smybCase = prompt("Uppercase? yes or no")
+var smybCase = prompt("smybols? yes or no")
   if(smybCase = yes){
+    function getRandomSmybol(){
+      var passSCase = "!@#$%^&*(){}+=<>.,";
+      return passSCase[Math.floor(Math.random()*passSCase.length)];
+    }
     //adds the S part of the var list to the RNG
   }
   else {

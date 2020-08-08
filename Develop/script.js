@@ -36,16 +36,19 @@ generateBtn.addEventListener("click", writePassword);
 
 //prompts set up
 
-var lengthPass = prompt("How long of password between 8 and 128 characters")
-  if(lengthPass.value => 8){
-    lengthPass = passLength //then it should go to next prompt
-  }  
-  if else (lengthPass.value <= 128){
-    lengthPass = passLength
-  } //then it should go to next prompt
-  else {
-    alert("Must select between 8-128")
-  }  
+
+var lengthPass = prompt("How long of password between 8 and 128 characters").value
+if (lengthPass == null || lengthPass == ""){
+  alert("You must have 8-128 characters")
+}
+if else(lengthPass.value <8){
+  alert("Your password is too short")
+}
+if else(lengthPass.value > 128)
+  alert("Your password is too long")
+else {
+  lengthPass.value = passLength
+}
 var upperCase = prompt("Uppercase? yes or no")
   if(upperCase = yes){
     //adds the U part of the var list to the RNG

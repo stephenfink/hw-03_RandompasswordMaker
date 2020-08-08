@@ -4,47 +4,70 @@ var generateBtn = document.querySelector("#generate");
 generateBtn.addEventListener("click", writePassword);
 //WHEN I click the button to generate a password
 // Assignment Code
-var upperLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-var lowerLetters = "abcdefghijklmnopqrstuvwxyz"
-var numerLetters = "1234567890"
+
 var symbolLetters = "!@#$%^&*(){}"
-var userInput = ""
+var password = ""
+var lengthPass
+
+var symbolCase 
+
+// Write password to the #password input
+// Assignment Code
+
 
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
-  var  passLength 
-  var  upperCase
-  var lowerCase
-  var numCase
-  var symbolCase
+  
+  passwordText.value = password;
 
+}
+function generatePassword() {
+  var passLength = prompt("how long you want the password between 8 and 128");
+  var upperCase = prompt("do you want upper case? yes or no");
+  var lowerCase = prompt("do you want lower case? yes or no");
+  var numCase = prompt("do you want numbers? yes or no");
+  var symbolCase = prompt("do you want symbols? yes or no");
+  
+}
+// Add event listener to generate button
+generateBtn.addEventListener("click", writePassword);
+
+  if(passLength.value <8 || >128){
+    alert("must be between the numbers of 8 and 128")
+  }
+  else {passLength.value = lengthPass }
     //when we click the button it it should
     //prompt for how long of password
-    var passLength = prompt("how long you want the password between 8 and 128")
+
+    
     //if i want ...
     // upper case
-    var upperCase = prompt("do you want upper case? yes or no")
-    function getRandomUpper{
+    
+    function getRandomUpper(){
       return String.fromCharCode(Math.floor(Math.random()* 26)+97)
     }
     //lower case
-    var lowerCase = prompt("do you want lower case? yes or no")
+    
     //this function is for the random number for lower case without use of var lowercase letters
     function getRandomLower(){
       return String.fromCharCode(Math.floor(Math.random()*26)+97)
     }
     //numbers
-    var numCase = prompt("do you want numbers? yes or no")
-    function getRandomNumber{
+  
+    function getRandomNumber(){
       return String.fromCharCode(Math.floor(Math.random()* 10)+48)
     }
     //symbols
-    var symbolCase = prompt("do you want symbols? yes or no")
+    
+    function getRandomSymbols(){
+      var symbolLetters = Math.floor(Math.random() * 10) + 1
+      for(i = 0; i <= symbolLetters.length; i++){}
+    }
     //then it will use the length of password to fill in with the cases i used
-    passwordText.value = password;
-}
-
+    
+  
 //prompts set up
-generateBtn.addEventListener("click", writePassword);
+
+

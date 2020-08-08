@@ -6,11 +6,11 @@ generateBtn.addEventListener("click", writePassword);
 // Assignment Code
 
 var symbolLetters = "!@#$%^&*(){}"
-var password = ""
-var lengthPass
-
+var userInput = ""
+var  passLength 
+var password
 var symbolCase 
-
+var lengthPass
 // Write password to the #password input
 // Assignment Code
 
@@ -24,20 +24,59 @@ function writePassword() {
 
 }
 function generatePassword() {
-  var passLength = prompt("how long you want the password between 8 and 128");
-  var upperCase = prompt("do you want upper case? yes or no");
-  var lowerCase = prompt("do you want lower case? yes or no");
-  var numCase = prompt("do you want numbers? yes or no");
-  var symbolCase = prompt("do you want symbols? yes or no");
+  passWordLength();
+  passAskUpper();
+  
+  
+  
   
 }
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
-  if(passLength.value <8 || >128){
-    alert("must be between the numbers of 8 and 128")
+  function passWordLength() {
+    var passLength = prompt("how long you want the password between 8 and 128");
+    if((passLength <8) || (passLength > 128)){
+      alert("you need at least 8 or less than 128 characters")}
+    
+      else{passLength = lengthPass}
+    
   }
-  else {passLength.value = lengthPass }
+
+  function passAskUpper() {
+    var upperCase = prompt("do you want upper case? yes or no");
+    if(upperCase === yes){
+      allow += allow
+    }
+    else { allow = allow}
+  }
+
+  function passAskLower() {
+    var lowerCase = prompt("do you want lower case? yes or no");
+    if(lowerCase === yes){
+      allow += allow
+    }
+    else{
+      allow = allow
+    }
+  }
+  function passAskNum() {
+    var numCase = prompt("do you want numbers? yes or no");
+    if(numCase === yes){
+      allow += allow
+    }
+    else{
+      allow = allow
+    }
+  }
+  function passAskSym(params) {
+    var symbolCase = prompt("do you want symbols? yes or no");
+    if(symbolCase === yes){
+      allow += allow
+    }
+    else{allow + allow}
+  }
+
     //when we click the button it it should
     //prompt for how long of password
 

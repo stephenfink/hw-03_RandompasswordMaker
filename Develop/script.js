@@ -5,13 +5,12 @@ generateBtn.addEventListener("click", writePassword);
 //WHEN I click the button to generate a password
 
 // Assignment Code
-var caseUpper = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z",];
-var caseLower = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z",];
-var caseNum = ["0","1","2","3","4","5","6","7","8","9",]
-var symbolLetters = ["!","@","#","$","%","^","&","*","(",")","+","-",];
+var caseUpper = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
+var caseLower = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+var caseNum = ["0","1","2","3","4","5","6","7","8","9"]
+var symbolLetters = ["!","@","#","$","%","^","&","*","(",")","+","-"];
 var password;
-var passLength;
-var lengthPass = [];
+var passLength 
 var pWChoice = [];
 // Write password to the #password input
 // Assignment Code
@@ -77,21 +76,13 @@ else {pWChoice + pWChoice
   console.log(pWChoice);
 }
 
-
-// Add event listener to generate button
-
-
   var password ="";
  
-  for (var i = 0; i < lengthPass.length; i++) {
-    var rNGen = pWChoice[Math.floor(Math.random()*passLength.length)];
+  for (var i = 1; i < passLength; i++) {
+    var rNGen = [Math.floor(Math.random(pWChoice)*passLength.length)];
     password = rNGen + password;
     console.log(rNGen)
+    console.log(password)
   }
-  for(var i = 1; i <lengthPass.value; i++){
-    var rNG = pWChoice[Math.random(Math.random()*passLength.value)];
-    password = rNG + password;
-    console.log(rNG)
-  }
-  
+  return password;
 }

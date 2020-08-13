@@ -78,7 +78,7 @@ else {pWChoice + pWChoice
 
   var password ="";
  
-  for (var i = 1; i < passLength; i++) {
+  for (var i = 1; i <= passLength; i++) {
     var rNGen = pWChoice[Math.floor(Math.random()*passLength)];
     password = rNGen + password;
     console.log(rNGen)
